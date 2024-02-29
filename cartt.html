@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CART</title>
+    <style>
+        * {
+  box-sizing: border-box;
+}
+#wrapper {
+  display: block;
+  width: 100%;
+}
+.header {
+  width: 70%;
+  padding: 7px;
+  margin: auto;
+  background-color: #ff2600;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+@media (max-width: 980px) {
+  .header {
+    width: 90%;
+  }
+}
+.left-container {
+  width: 15%;
+  padding: 10px;
+  margin: 10px 0 0 15.5%;
+  color: #f00;
+  font-size: 24px;
+  font-weight: 700;
+  box-shadow: 0 0 5px #000;
+  text-align: center;
+  background-color: #fa0;
+}
+@media (max-width: 980px) {
+  .left-container {
+    width: 45%;
+    margin: 10px 0 0 5.5%;
+    font-size: 20px;
+  }
+}
+.clear {
+  position: relative;
+  left: 0;
+  width: 45%;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 10px;
+  cursor: pointer;
+}
+.checkout {
+  position: relative;
+  left: 0;
+  width: 45%;
+  padding: 5px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #00f;
+  font-size: 10px;
+  cursor: pointer;
+}
+.item-div {
+  width: 100%;
+  min-height: 24px;
+  margin-top: 10px;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 16px;
+}
+h3 {
+  color: #f00;
+}
+.row {
+  position: absolute;
+  top: 50px;
+  right: 16%;
+  float: right;
+  width: 52.5%;
+  padding: 10px;
+  border: 1px solid #000;
+}
+@media (max-width: 980px) {
+  .row {
+    right: 2%;
+    width: 37.5%;
+    margin: 0px 7% 0 0;
+  }
+}
+.column {
+  float: left;
+  width: 32%;
+  padding: 10px 5px 10px 10px;
+  margin-right: 1.333%;
+}
+
+.column:last-child {
+  margin-right: 0px;
+}
+@media (max-width: 980px) {
+  .column {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 980px) {
+  .column:last-child {
+    margin-bottom: 0px;
+  }
+}
+.prod {
+  width: 100%;
+  color: #f00;
+  font-size: 24px;
+  text-align: center;
+}
+@media (max-width: 980px) {
+  .prod {
+    font-size: 20px;
+  }
+}
+img {
+  width: 100%;
+  height: 150px;
+}
+@media (max-width: 980px) {
+  img {
+    height: auto;
+  }
+}
+p {
+  font-size: 16px;
+  text-align: center;
+}
+@media (max-width: 980px) {
+  p {
+    font-size: 14px;
+  }
+}
+input[type="number"] {
+  padding: 5px;
+  border: 1px solid #000;
+}
+.main {
+  display: none;
+  width: 70%;
+  height: 97.5vh;
+  margin: auto;
+  border: 1px solid #000;
+}
+#checkprice {
+  text-align: center;
+}
+#returning {
+  position: absolute;
+  bottom: 5vh;
+  right: 17.5%;
+  padding: 5px 10px;
+  background-color: #fa0;
+  border: 1px solid #f00;
+}
+@media (max-width: 980px) {
+  #returning {
+    bottom: 3vh;
+    right: 20%;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="header">
+          <span><b>SHOPPING CART</b></b></span>
+        </div>
+        <div class="left-container">
+          <span>ITEMS IN CART</span>
+          <br>
+          <button class="clear" id="clear"><b>EMPTY CART</b></button>
+          <button class="checkout" id="checkout"><b>CHECKOUT</b></button>
+          <div class="item-div">
+            <h3>Stored in Cart</h3>
+            <p id="items-list0"></p>
+            <p id="items-list1"></p>
+            <p id="items-list2"></p>
+            <span>Total: </span>
+            <p id="total"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="prod">
+            <h3 id="span">PRODUCTS</h3>
+          </div>
+          <div class="column">
+            <img src="a9.png" alt="dress watch">
+            <p>ORIENT AC<br>&dollar;575.99</p>
+            <label>Add:</label>
+            <input type="number" class="items" id="item0" min="0" max="99" step="1" value="0">
+          </div>
+          <div class="column">
+            <img src="s11.png" alt="work watch">
+            <p>SAMSUNG S23 ULTRA<br>&dollar;953.75</p>
+            <label>Add:</label>
+            <input type="number" class="items" id="item1" min="0" max="99" step="1" value="0">
+          </div>
+          <div class="column">
+            <img src="t1.png" alt="top watch">
+            <p>TCL 4O INCH LED<br>&dollar;107.559</p>
+            <label>Add:</label>
+            <input type="number" class="items" id="item2" min="0" max="99" step="1" value="0">
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="header" style="width: 100%">
+          <span>Checkout</span>
+        </div>
+        <h3 id="checkprice"></h3>
+        <p>Place your checkout payment details form in this space provided</p>
+        <button id="returning">Return To Cart</button>
+      </div>
+</body>
+<script>
+    let inc = 0;
+var names = ["ORIENT AC", "SAMAUNG S23 ULTRA", "TCL 40 INCH LED"];
+var prices = ["575.99", "953.75", "107.55"];
+
+const items = document.querySelectorAll(".items");
+const clear = document.querySelectorAll(".clear");
+const main = document.querySelectorAll(".main");
+const wrap = document.querySelector("#wrapper");
+
+const list0 = document.querySelector("#items-list0");
+const list1 = document.querySelector("#items-list1");
+const list2 = document.querySelector("#items-list2");
+const total = document.querySelector("#total");
+const checkprice = document.querySelector("#checkprice");
+
+items[0].addEventListener("change", (event) => {
+  list0.innerHTML =
+    names[0] + "<br>" + "&dollar;" + prices[0] * event.currentTarget.value;
+  var total1 =
+    prices[0] * items[0].value +
+    prices[1] * items[1].value +
+    prices[2] * items[2].value;
+  total.innerHTML = total1.toFixed(2);
+});
+items[1].addEventListener("change", (event) => {
+  list1.innerHTML =
+    names[1] + "<br>" + "&dollar;" + prices[1] * event.currentTarget.value;
+  total2 =
+    prices[0] * items[0].value +
+    prices[1] * items[1].value +
+    prices[2] * items[2].value;
+  total.innerHTML = total2.toFixed(2);
+});
+items[2].addEventListener("change", (event) => {
+  list2.innerHTML =
+    names[2] + "<br>" + "&dollar;" + prices[2] * event.currentTarget.value;
+  total3 =
+    prices[0] * items[0].value +
+    prices[1] * items[1].value +
+    prices[2] * items[2].value;
+  total.innerHTML = total3.toFixed(2);
+});
+clear[0].addEventListener("click", function () {
+  for (var i = 0; i < 3; i++) {
+    items[i].value = 0;
+  }
+  list0.innerHTML = "";
+  list1.innerHTML = "";
+  list2.innerHTML = "";
+  total.innerHTML = "";
+});
+checkout.addEventListener("click", function () {
+  wrapper.style.display = "none";
+  main[0].style.display = "block";
+  if (total.innerHTML == "") {
+    total.innerHTML = "0";
+    checkprice.innerHTML = "Checkout Value = &dollar;" + total.innerHTML;
+  } else {
+    checkprice.innerHTML = "Checkout Value = &dollar;" + total.innerHTML;
+  }
+});
+returning.addEventListener("click", function () {
+  wrapper.style.display = "block";
+  main[0].style.display = "none";
+});
+
+</script>
+</html>
